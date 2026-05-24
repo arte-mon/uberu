@@ -1,12 +1,12 @@
 // Инициализация карт при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
-  // Координаты для карты (Москва по умолчанию)
-  const mapCenter = [55.751244, 37.618423];
+  // Координаты для карты (Санкт-Петербург)
+  const mapCenter = [59.934280, 30.335099];
   
   // Мини-карта в карточке
   const miniMap = L.map('miniMap', {
     center: mapCenter,
-    zoom: 10,
+    zoom: 11,
     zoomControl: false,
     dragging: false,
     scrollWheelZoom: false,
@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
+    attribution: ''
   }).addTo(miniMap);
   
   // Добавляем маркеры на мини-карту
   const sortingPoints = [
-    [55.751244, 37.618423],
-    [55.755814, 37.617635],
-    [55.748915, 37.625110]
+    [59.934280, 30.335099],
+    [59.938636, 30.322470],
+    [59.920724, 30.315367]
   ];
   
   sortingPoints.forEach(point => {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
+        attribution: ''
       }).addTo(fullMap);
       
       // Добавляем маркеры на полную карту
