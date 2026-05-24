@@ -160,13 +160,39 @@
 
 /* ACTIVITY */
 .activity-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
+  display: flex;
   gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
-.activity-big,
-.activity-small {
+.activity-card {
+  flex: 0 0 85%;
   height: 320px;
+  scroll-snap-align: start;
+}
+.activity-card:first-child {
+  margin-left: 16px;
+}
+.activity-card:last-child {
+  margin-right: 16px;
+}
+
+@media (min-width: 769px) {
+  .activity-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr 0.7fr;
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+  .activity-card {
+    flex: auto;
+    scroll-snap-align: normal;
+  }
+  .activity-card:first-child,
+  .activity-card:last-child {
+    margin: 0;
+  }
 }
 
 /* ABSOLUTE IMAGES */
@@ -175,8 +201,7 @@
 .small-yellow img,
 .yellow-card img,
 .orange-card img,
-.activity-big img,
-.activity-small img {
+.activity-card img {
   position: absolute;
   inset: 0;
 }
