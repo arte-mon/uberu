@@ -66,6 +66,9 @@
   content: "";
   background: rgba(0, 0, 0, 0.15);
 }
+.map-card .card-tag {
+  z-index: 2;
+}
 
 /* CO2 CARD */
 .carbon-card {
@@ -128,7 +131,8 @@
   content: "";
   background: rgba(0, 0, 0, 0.3);
 }
-.planet-card .content {
+.planet-card .content,
+.planet-card .card-tag {
   position: relative;
   z-index: 2;
 }
