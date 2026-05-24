@@ -54,6 +54,16 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0">
+                  <div class="map-controls">
+                    <input type="text" class="map-search" placeholder="Поиск пункта переработки или адреса" />
+                    <div class="map-filters">
+                      <button class="filter-btn" data-type="plastic" data-color="#ff7e52">ПЛАСТИК</button>
+                      <button class="filter-btn" data-type="paper" data-color="#BDBDBD">БУМАГА</button>
+                      <button class="filter-btn" data-type="glass" data-color="#769ff3">СТЕКЛО</button>
+                      <button class="filter-btn" data-type="metal" data-color="#fbbf49">МЕТАЛЛ</button>
+                      <button class="filter-btn" data-type="organic" data-color="#0ba452">ОРГАНИКА</button>
+                    </div>
+                  </div>
                   <div id="fullMap"></div>
                 </div>
               </div>
