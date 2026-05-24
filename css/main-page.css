@@ -80,6 +80,67 @@
 #mapModal .modal-body {
   height: calc(100vh - 60px);
   padding: 0 !important;
+  position: relative;
+}
+.map-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.map-search {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  outline: none;
+}
+.map-search:focus {
+  border-color: var(--app-green);
+}
+.map-filters {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+}
+.filter-btn {
+  flex: 0 0 auto;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 999px;
+  background: white;
+  color: #222;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.filter-btn.active {
+  color: white;
+}
+.filter-btn[data-type="plastic"].active {
+  background: #ff7e52;
+}
+.filter-btn[data-type="paper"].active {
+  background: #BDBDBD;
+}
+.filter-btn[data-type="glass"].active {
+  background: #769ff3;
+}
+.filter-btn[data-type="metal"].active {
+  background: #fbbf49;
+}
+.filter-btn[data-type="organic"].active {
+  background: #0ba452;
 }
 #fullMap {
   width: 100%;

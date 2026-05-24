@@ -3,6 +3,26 @@ document.addEventListener('DOMContentLoaded', function() {
   // Координаты для карты (Санкт-Петербург)
   const mapCenter = [59.934280, 30.335099];
   
+  // Данные о пунктах сортировки с типами
+  const sortingPoints = [
+    { coords: [59.934280, 30.335099], type: 'plastic', name: 'Пункт пластика на Невском' },
+    { coords: [59.938636, 30.322470], type: 'paper', name: 'Бумага на Васильевском' },
+    { coords: [59.920724, 30.315367], type: 'glass', name: 'Стекло у метро Пушкинская' },
+    { coords: [59.950000, 30.350000], type: 'metal', name: 'Металл на Петроградской' },
+    { coords: [59.910000, 30.300000], type: 'organic', name: 'Органика в центре' },
+    { coords: [59.945000, 30.380000], type: 'plastic', name: 'Пластик на Лиговском' },
+    { coords: [59.925000, 30.340000], type: 'paper', name: 'Бумага у Спасской' }
+  ];
+  
+  // Цвета для типов отходов
+  const typeColors = {
+    plastic: '#ff7e52',
+    paper: '#BDBDBD',
+    glass: '#769ff3',
+    metal: '#fbbf49',
+    organic: '#0ba452'
+  };
+  
   // Мини-карта в карточке
   const miniMap = L.map('miniMap', {
     center: mapCenter,
@@ -20,18 +40,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }).addTo(miniMap);
   
   // Добавляем маркеры на мини-карту
-  const sortingPoints = [
-    [59.934280, 30.335099],
-    [59.938636, 30.322470],
-    [59.920724, 30.315367]
-  ];
-  
   sortingPoints.forEach(point => {
-    L.marker(point).addTo(miniMap);
+    L.marker(point.coords).addTo(miniMap);
   });
   
   // Полноэкранная карта в модальном окне
   let fullMap = null;
+  const markersByType = {};
   
   // Открытие модального окна с картой
   const mapCard = document.getElementById('mapCard');
@@ -53,17 +68,75 @@ document.addEventListener('DOMContentLoaded', function() {
         attribution: ''
       }).addTo(fullMap);
       
-      // Добавляем маркеры на полную карту
+      // Создаем маркеры по типам
       sortingPoints.forEach(point => {
-        L.marker(point)
-          .addTo(fullMap)
-          .bindPopup('Пункт сортировки');
+        if (!markersByType[point.type]) {
+          markersByType[point.type] = [];
+        }
+        
+        const marker = L.marker(point.coords)
+          .bindPopup(point.name);
+        marker.addTo(fullMap);
+        markersByType[point.type].push(marker);
+      });
+      
+      // Обработчики кнопок фильтров
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const type = this.dataset.type;
+          this.classList.toggle('active');
+          
+          if (this.classList.contains('active')) {
+            // Показываем маркеры этого типа
+            if (markersByType[type]) {
+              markersByType[type].forEach(marker => marker.addTo(fullMap));
+            }
+          } else {
+            // Скрываем маркеры этого типа
+            if (markersByType[type]) {
+              markersByType[type].forEach(marker => fullMap.removeLayer(marker));
+            }
+          }
+        });
+      });
+      
+      // Поиск по карте
+      const searchInput = document.querySelector('.map-search');
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        
+        sortingPoints.forEach((point, index) => {
+          const marker = markersByType[point.type]?.[index];
+          if (!marker) return;
+          
+          if (query === '' || point.name.toLowerCase().includes(query)) {
+            if (!fullMap.hasLayer(marker)) {
+              marker.addTo(fullMap);
+            }
+          } else {
+            fullMap.removeLayer(marker);
+          }
+        });
       });
     } else {
       // Обновляем размер карты после показа
       setTimeout(() => {
         fullMap.invalidateSize();
       }, 100);
+    }
+  });
+  
+  // Сброс фильтров при закрытии модального окна
+  document.getElementById('mapModal').addEventListener('hidden.bs.modal', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.classList.remove('active');
+    });
+    
+    const searchInput = document.querySelector('.map-search');
+    if (searchInput) {
+      searchInput.value = '';
     }
   });
 });
