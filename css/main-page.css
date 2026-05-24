@@ -17,6 +17,29 @@
   z-index: 5;
   color: var(--app-white);
 }
+
+.card-tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: white;
+  color: #222;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.card-tag-green {
+  background: var(--app-green);
+  color: white;
+}
+
+.card-tag-red {
+  background: var(--app-red);
+  color: white;
+}
+
 .tag {
   position: absolute;
   bottom: 16px;
