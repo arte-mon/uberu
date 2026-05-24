@@ -1,253 +1,190 @@
-/* КАРТОЧКИ */
-
-.layout {
-  display: grid;
-
-  /* 12 колонок */
-  grid-template-columns: repeat(12, 1fr);
-
-  /* 12 строк по высоте */
-  grid-template-rows: repeat(12, 1fr);
-
-  gap: 20px;
+/* ОБЩИЕ КАРТОЧКИ */
+.card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 18px;
+  color: white;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card p {
+  position: relative;
+  line-height: 1.2;
+  z-index: 5;
+  color: var(--app-white);
+}
+.tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: white;
+  color: #222;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.card-carbon {
-  background-color: var(--app-green);
-  color: var(--app-white);
+/* MAP */
+.map-card {
+  height: 180px;
+  margin-bottom: 12px;
+}
+.map-card img,
+.map-card::after {
+  position: absolute;
+  inset: 0;
+}
+.map-card::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.15);
+}
 
+/* CO2 CARD */
+.carbon-card {
+  background: var(--app-green);
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-
-  width: 100%;
-  /* height: clamp(180px, 20vh, 260px); */
-
-  padding: clamp(16px, 2vw, 32px);
-  border-radius: 24px;
-
-  overflow: hidden;
+  min-height: 180px;
+  margin-bottom: 12px;
+}
+.big-card-title {
+  font-size: var(--h2-font-size);
+  margin-top: 4px;
+}
+.carbon-text {
+  width: 45%;
+}
+.carbon-card img {
+  width: 38%;
+  object-fit: contain;
 }
 
-.text-content {
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.left-big {
+  background-color: var(--app-blue);
+  min-height: 236px;
+}
+.right-column {
   display: flex;
   flex-direction: column;
   gap: 12px;
-
-  width: 33%;
 }
-
-.card-carbon img {
-  height: 100%;
-  width: auto;
-  object-fit: contain;
-
-  flex-shrink: 0;
-}
-
-/* =========================
-   Большие мониторы
-========================= */
-@media (min-width: 1600px) {
-  .card-carbon {
-    height: 260px;
-    padding: 36px;
-  }
-
-  .text-content {
-    width: 50%;
-  }
-}
-
-/* =========================
-   Ноутбуки
-========================= */
-@media (max-width: 1200px) {
-  .card-carbon {
-    height: 220px;
-  }
-
-  .text-content {
-    width: 58%;
-  }
-}
-
-/* =========================
-   Планшеты
-========================= */
-@media (max-width: 768px) {
-  .card-carbon {
-    height: 180px;
-    padding: 18px;
-    border-radius: 20px;
-  }
-
-  .text-content {
-    width: 55%;
-    gap: 8px;
-  }
-
-  .card-headline-4 {
-    font-size: clamp(16px, 4vw, 24px);
-  }
-
-  .card-carbon img {
-    max-width: 38%;
-  }
-}
-
-/* =========================
-   Мобильные
-========================= */
-@media (max-width: 480px) {
-  .card-carbon {
-    height: 180px;
-    padding: 14px;
-  }
-
-  .text-content {
-    width: 33%;
-  }
-
-  .card-headline-4 {
-    font-size: 18px;
-    line-height: 1.15;
-  }
-
-  .card-carbon img {
-    max-width: 35%;
-    height: 90%;
-  }
-}
-
-/* 7/12 ширины и вся высота */
-.card-1 {
-  grid-column: 1 / 8;
-  grid-row: 1 / 13;
-  background-color: var(--app-blue);
-  color: var(--app-white);
-}
-
-/* 5/12 ширины и 4/12 высоты */
-.card-2 {
-  grid-column: 8 / 13;
-  grid-row: 1 / 5;
+.small-green {
   background-color: var(--app-green);
-  color: var(--app-white);
+  min-height: 76px;
 }
-
-/* 5/12 ширины и 8/12 высоты */
-.card-3 {
-  grid-column: 8 / 13;
-  grid-row: 5 / 13;
+.small-yellow {
   background-color: var(--app-yellow);
-  color: var(--app-white);
-}
-
-/* ЖИДКИЕ КАРТОЧКИ СТРУКТУРА */
-
-.blob_layer {
-  position: relative;
-  min-height: 426px;
-  width: 100%;
-}
-
-.blob-grid-1,
-.blob-grid-2 {
-  display: grid;
-
-  /* 12 колонок */
-  grid-template-columns: repeat(12, 1fr);
-
-  /* 12 строк по высоте */
-  grid-template-rows: repeat(12, 1fr);
-
-  gap: 20px;
-}
-
-.blob-grid-1 {
-  position: absolute;
-  width: 100%;
-  min-height: 266px;
-  filter: url(#goo);
-  /* top: 0;
-  left: 0; */
-}
-
-.blob-grid-2 {
-  position: absolute;
-  width: 100%;
-  top: 200px;
-  min-height: 236px;
-  /* top: 0;
-  left: 0; */
-}
-
-.blob-card-carbon {
-  grid-column: 1 / 13;
-  grid-row: 1 / 9;
-  background-color: var(--app-green);
-  color: var(--app-white);
-
-  min-height: 180px;
-}
-
-/* 5/12 ширины и 4/12 высоты */
-.blob-card-2 {
-  grid-column: 8 / 13;
-  grid-row: 9 / 13;
-  background-color: var(--app-green);
-  color: var(--app-white);
-
-  /* min-height: 76px; */
-}
-
-/* 7/12 ширины и вся высота */
-.blob-card-1 {
-  grid-column: 1 / 8;
-  grid-row: 1 / 13;
-  background-color: var(--app-blue);
-  color: var(--app-white);
-
-  min-height: 266px;
-}
-
-/* 5/12 ширины и 8/12 высоты */
-.blob-card-3 {
-  grid-column: 8 / 13;
-  grid-row: 5 / 13;
-  background-color: var(--app-yellow);
-  color: var(--app-white);
-
   min-height: 150px;
 }
 
-/* СЕКЦИЯ О БЮРО */
-.about {
-  padding: 100px 0;
-}
-
-.about-card-image {
-  height: 200px;
-  object-fit: cover;
-}
-
-/*  */
-/*  */
-/* СТИЛИ КАРТОЧЕК */
-.card-headline-3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: var(--h3-font-size);
-  line-height: 1.1;
+/* PLANET */
+.planet-card {
+  height: 180px;
   margin-bottom: 12px;
-  text-transform: uppercase;
+}
+.planet-card img,
+.planet-card::after {
+  position: absolute;
+  inset: 0;
+}
+.planet-card::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.3);
+}
+.planet-card .content {
+  position: relative;
+  z-index: 2;
 }
 
-.card-headline-4 {
-  font-family: "Inter", serif;
-  font-size: var(--h4-font-size);
-  letter-spacing: 1px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  text-transform: uppercase;
+/* TWO CARDS */
+.double-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.yellow-card {
+  background-color: var(--app-yellow);
+  min-height: 180px;
+}
+.orange-card {
+  background-color: var(--app-red);
+  min-height: 180px;
+}
+
+/* ACTIVITY */
+.activity-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 12px;
+}
+.activity-big,
+.activity-small {
+  height: 320px;
+}
+
+/* ABSOLUTE IMAGES */
+
+.left-big img,
+.small-yellow img,
+.yellow-card img,
+.orange-card img,
+.activity-big img,
+.activity-small img {
+  position: absolute;
+  inset: 0;
+}
+
+/* TYPOGRAPHY - ADAPTIVE HEADINGS */
+h1 {
+  font-size: var(--h1-font-size);
+}
+.section-title {
+  font-size: var(--text-style);
+}
+.big-card-title {
+  font-size: var(--h2-font-size);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 14px;
+  }
+  .section-title {
+    font-size: 12px;
+  }
+  .big-card-title {
+    font-size: 14px;
+  }
+  .carbon-card h3 {
+    font-size: 14px;
+  }
+  .carbon-card h3 span {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .left-big h3,
+  .small-green h3 {
+    font-size: 12px;
+  }
+  .left-big h3 span,
+  .small-green h3 span {
+    font-size: 16px;
+    font-weight: 700;
+  }
 }
