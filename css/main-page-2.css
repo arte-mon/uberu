@@ -138,6 +138,7 @@
 }
 
 /* ABSOLUTE IMAGES */
+
 .left-big img,
 .small-yellow img,
 .yellow-card img,
@@ -146,4 +147,44 @@
 .activity-small img {
   position: absolute;
   inset: 0;
+}
+
+/* TYPOGRAPHY - ADAPTIVE HEADINGS */
+h1 {
+  font-size: var(--h1-font-size);
+}
+.section-title {
+  font-size: var(--text-style);
+}
+.big-card-title {
+  font-size: var(--h2-font-size);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 14px;
+  }
+  .section-title {
+    font-size: 12px;
+  }
+  .big-card-title {
+    font-size: 14px;
+  }
+  .carbon-card h3 {
+    font-size: 14px;
+  }
+  .carbon-card h3 span {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .left-big h3,
+  .small-green h3 {
+    font-size: 12px;
+  }
+  .left-big h3 span,
+  .small-green h3 span {
+    font-size: 16px;
+    font-weight: 700;
+  }
 }
