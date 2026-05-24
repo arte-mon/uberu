@@ -131,9 +131,14 @@
   content: "";
   background: rgba(0, 0, 0, 0.3);
 }
-.planet-card .content,
-.planet-card .card-tag {
+.planet-card .content {
   position: relative;
+  z-index: 2;
+}
+.planet-card .card-tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
   z-index: 2;
 }
 
