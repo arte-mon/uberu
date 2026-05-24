@@ -76,28 +76,34 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const marker = L.marker(point.coords)
           .bindPopup(point.name);
-        marker.addTo(fullMap);
         markersByType[point.type].push(marker);
       });
       
       // Обработчики кнопок фильтров
       const filterBtns = document.querySelectorAll('.filter-btn');
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          const type = this.dataset.type;
-          this.classList.toggle('active');
-          
-          if (this.classList.contains('active')) {
-            // Показываем маркеры этого типа
+      
+      // Функция для обновления видимости маркеров
+      function updateMarkersVisibility() {
+        // Скрываем все маркеры
+        Object.keys(markersByType).forEach(type => {
+          markersByType[type].forEach(marker => fullMap.removeLayer(marker));
+        });
+        
+        // Показываем только маркеры активных типов
+        filterBtns.forEach(btn => {
+          if (btn.classList.contains('active')) {
+            const type = btn.dataset.type;
             if (markersByType[type]) {
               markersByType[type].forEach(marker => marker.addTo(fullMap));
             }
-          } else {
-            // Скрываем маркеры этого типа
-            if (markersByType[type]) {
-              markersByType[type].forEach(marker => fullMap.removeLayer(marker));
-            }
           }
+        });
+      }
+      
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          this.classList.toggle('active');
+          updateMarkersVisibility();
         });
       });
       
@@ -124,6 +130,45 @@ document.addEventListener('DOMContentLoaded', function() {
       setTimeout(() => {
         fullMap.invalidateSize();
       }, 100);
+    }
+    
+    // Сбрасываем все фильтры и устанавливаем по умолчанию только ПЛАСТИК
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.classList.remove('active');
+    });
+    
+    const plasticBtn = document.querySelector('.filter-btn[data-type="plastic"]');
+    if (plasticBtn) {
+      plasticBtn.classList.add('active');
+    }
+    
+    // Функция для обновления видимости маркеров (если еще не определена)
+    if (typeof updateMarkersVisibility === 'function') {
+      updateMarkersVisibility();
+    } else {
+      // Если функция еще не создана (первый запуск), создаем её и вызываем
+      const updateMarkersVisibilityLocal = function() {
+        Object.keys(markersByType).forEach(type => {
+          markersByType[type].forEach(marker => fullMap.removeLayer(marker));
+        });
+        
+        filterBtns.forEach(btn => {
+          if (btn.classList.contains('active')) {
+            const type = btn.dataset.type;
+            if (markersByType[type]) {
+              markersByType[type].forEach(marker => marker.addTo(fullMap));
+            }
+          }
+        });
+      };
+      updateMarkersVisibilityLocal();
+    }
+    
+    // Очищаем поле поиска
+    const searchInput = document.querySelector('.map-search');
+    if (searchInput) {
+      searchInput.value = '';
     }
   });
   
