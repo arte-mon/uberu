@@ -1,0 +1,96 @@
+/* Скрываем навбар на десктопе */
+.mobile-nav {
+  display: none;
+}
+
+/* Показываем только на мобильных */
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: #1a1a1a;
+    z-index: 1000;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-item {
+    color: #888;
+    font-size: 24px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    transition: color 0.3s ease;
+  }
+
+  .nav-item:hover,
+  .nav-item.active {
+    color: #fff;
+  }
+
+  /* Центральный выступающий элемент */
+  .center-btn {
+    position: relative;
+    top: -25px;
+    width: 60px;
+    height: 60px;
+    background: #2ecc71;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+  }
+
+  .center-btn:hover {
+    transform: scale(1.15);
+  }
+
+  .center-btn svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+  }
+
+  /* Иконки как SVG или Font Awesome — здесь используем простые SVG */
+  .icon-trash::before {
+    content: url(../img/nav_icons/main-icon.svg);
+  }
+  .icon-lightbulb::before {
+    content: url(../img/nav_icons/learn-icon-1.svg);
+  }
+  .icon-info::before {
+    content: url(../img/nav_icons/learn-icon.svg);
+  }
+  .icon-user::before {
+    content: url(../img/nav_icons/profile-icon.svg);
+  }
+
+  /* Адаптация под очень маленькие экраны */
+  @media (max-width: 360px) {
+    .mobile-nav {
+      height: 60px;
+    }
+    .center-btn {
+      width: 50px;
+      height: 50px;
+      top: -20px;
+    }
+    .nav-item {
+      font-size: 20px;
+    }
+  }
+}
