@@ -77,6 +77,26 @@
             </div>
 
             <!-- Card 3 - Yellow -->
+            <div class="card yellow" data-category="completed">
+              <div class="date-badge">1 день</div>
+              <h3 class="card-title">Купить один товар в магазине</h3>
+              <div class="card-image">
+                <img src="../img/tasks_page/tshort.png" alt="T-shirt" />
+              </div>
+              <button class="eco-points-button">15 эко-баллов</button>
+            </div>
+
+            <!-- Card 4 - Green -->
+            <div class="card green" data-category="completed">
+              <div class="date-badge">8 часов</div>
+              <h3 class="card-title">Купить один товар в магазине</h3>
+              <div class="card-image">
+                <img src="../img/tasks_page/bag.png" alt="Shopping bag" />
+              </div>
+              <button class="eco-points-button">65 эко-баллов</button>
+            </div>
+
+            <!-- Card 3 - Yellow -->
             <div class="card yellow" data-category="new">
               <div class="date-badge">1 день</div>
               <h3 class="card-title">Купить один товар в магазине</h3>
@@ -95,51 +115,61 @@
               </div>
               <button class="eco-points-button">65 эко-баллов</button>
             </div>
+
+            <!-- Card 8 - rejected -->
+            <div class="card red" data-category="rejected">
+              <div class="date-badge">8 часов</div>
+              <h3 class="card-title">Купить один товар в магазине</h3>
+              <div class="card-image">
+                <img src="../img/tasks_page/bag.png" alt="Shopping bag" />
+              </div>
+              <button class="eco-points-button">65 эко-баллов</button>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const segments = document.querySelectorAll('.segment');
-        const background = document.querySelector('.segment-background');
-        const cards = document.querySelectorAll('.card');
-        
+      document.addEventListener("DOMContentLoaded", function () {
+        const segments = document.querySelectorAll(".segment");
+        const background = document.querySelector(".segment-background");
+        const cards = document.querySelectorAll(".card");
+
         // Функция для обновления позиций и видимости
         function updateView(activeIndex) {
           // Перемещаем зеленую подложку
           background.style.transform = `translateX(${activeIndex * 100}%)`;
-          
+
           // Обновляем активный класс на сегментах
           segments.forEach((segment, index) => {
             if (index === activeIndex) {
-              segment.classList.add('active');
+              segment.classList.add("active");
             } else {
-              segment.classList.remove('active');
+              segment.classList.remove("active");
             }
           });
-          
+
           // Показываем/скрываем карточки по категории
-          const categories = ['completed', 'new', 'rejected'];
+          const categories = ["completed", "new", "rejected"];
           const activeCategory = categories[activeIndex];
-          
-          cards.forEach(card => {
+
+          cards.forEach((card) => {
             if (card.dataset.category === activeCategory) {
-              card.style.display = 'flex';
+              card.style.display = "flex";
             } else {
-              card.style.display = 'none';
+              card.style.display = "none";
             }
           });
         }
-        
+
         // Обработчик клика на сегмент
         segments.forEach((segment, index) => {
-          segment.addEventListener('click', () => {
+          segment.addEventListener("click", () => {
             updateView(index);
           });
         });
-        
+
         // Инициализация - показываем только "Выполненные"
         updateView(0);
       });

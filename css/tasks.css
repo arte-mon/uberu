@@ -1,5 +1,6 @@
 /* Header */
 .header {
+  margin-top: 8vh;
   margin-bottom: 24px;
 }
 
@@ -51,10 +52,6 @@
   z-index: 1;
 }
 
-.segment.active {
-  color: var(--app-dark);
-}
-
 .segment-background {
   position: absolute;
   top: 4px;
@@ -95,6 +92,10 @@
 
 .card.green {
   background-color: var(--app-green);
+}
+
+.card.red {
+  background-color: var(--app-red);
 }
 
 .date-badge {
