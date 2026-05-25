@@ -48,15 +48,16 @@
 
           <!-- Segmented Control -->
           <div class="segmented-control">
-            <div class="segment active">Выполненные</div>
-            <div class="segment">Новые</div>
-            <div class="segment">Отклоненные</div>
+            <div class="segment-background"></div>
+            <div class="segment active" data-index="0">Выполненные</div>
+            <div class="segment" data-index="1">Новые</div>
+            <div class="segment" data-index="2">Отклоненные</div>
           </div>
 
           <!-- Cards Grid -->
           <div class="cards-grid">
             <!-- Card 1 - Blue -->
-            <div class="card blue">
+            <div class="card blue" data-category="completed">
               <div class="date-badge">2 дня</div>
               <h3 class="card-title">Убрать одну точку</h3>
               <div class="card-image">
@@ -66,7 +67,7 @@
             </div>
 
             <!-- Card 2 - Yellow -->
-            <div class="card yellow">
+            <div class="card yellow" data-category="completed">
               <div class="date-badge">1 месяц</div>
               <h3 class="card-title">Убрать восемь точек</h3>
               <div class="card-image">
@@ -76,7 +77,7 @@
             </div>
 
             <!-- Card 3 - Yellow -->
-            <div class="card yellow">
+            <div class="card yellow" data-category="new">
               <div class="date-badge">1 день</div>
               <h3 class="card-title">Купить один товар в магазине</h3>
               <div class="card-image">
@@ -86,7 +87,7 @@
             </div>
 
             <!-- Card 4 - Green -->
-            <div class="card green">
+            <div class="card green" data-category="new">
               <div class="date-badge">8 часов</div>
               <h3 class="card-title">Купить один товар в магазине</h3>
               <div class="card-image">
@@ -98,5 +99,50 @@
         </div>
       </section>
     </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const segments = document.querySelectorAll('.segment');
+        const background = document.querySelector('.segment-background');
+        const cards = document.querySelectorAll('.card');
+        
+        // Функция для обновления позиций и видимости
+        function updateView(activeIndex) {
+          // Перемещаем зеленую подложку
+          background.style.transform = `translateX(${activeIndex * 100}%)`;
+          
+          // Обновляем активный класс на сегментах
+          segments.forEach((segment, index) => {
+            if (index === activeIndex) {
+              segment.classList.add('active');
+            } else {
+              segment.classList.remove('active');
+            }
+          });
+          
+          // Показываем/скрываем карточки по категории
+          const categories = ['completed', 'new', 'rejected'];
+          const activeCategory = categories[activeIndex];
+          
+          cards.forEach(card => {
+            if (card.dataset.category === activeCategory) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        }
+        
+        // Обработчик клика на сегмент
+        segments.forEach((segment, index) => {
+          segment.addEventListener('click', () => {
+            updateView(index);
+          });
+        });
+        
+        // Инициализация - показываем только "Выполненные"
+        updateView(0);
+      });
+    </script>
   </body>
 </html>

@@ -34,6 +34,7 @@
   border-radius: 32px;
   padding: 4px;
   margin-bottom: 24px;
+  position: relative;
 }
 
 .segment {
@@ -44,12 +45,26 @@
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   color: var(--app-white);
+  position: relative;
+  z-index: 1;
 }
 
 .segment.active {
+  color: var(--app-dark);
+}
+
+.segment-background {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: calc(100% - 8px);
+  width: calc(100% / 3 - 2.667px);
   background-color: var(--app-green);
+  border-radius: 28px;
+  transition: transform 0.3s ease;
+  z-index: 0;
 }
 
 /* Cards Grid */
