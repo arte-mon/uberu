@@ -106,10 +106,10 @@
 }
 
 .card-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: calc(100% + 2 * 20px);
+  max-width: none;
+  margin-left: -20px;
+  margin-top: -20px;
   height: 140px;
   display: flex;
   align-items: center;
@@ -152,6 +152,9 @@
   }
 
   .card-image {
+    width: calc(100% + 2 * 16px);
+    margin-left: -16px;
+    margin-top: -16px;
     height: 120px;
   }
 }
