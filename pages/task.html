@@ -27,15 +27,72 @@
     <!-- СТИЛИ -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
-
+    <link rel="stylesheet" href="css/tasks.css" />
     <title>Уберу | Задания</title>
   </head>
   <body>
     <main class="main">
       <section>
         <div class="container">
-          <h1>Задания</h1>
-          <p>Здесь будут отображаться задания для сортировки мусора.</p>
+          <!-- Header -->
+          <div class="header">
+            <div class="back-button">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+              </svg>
+            </div>
+            <h1 class="page-title">Задания</h1>
+          </div>
+
+          <!-- Segmented Control -->
+          <div class="segmented-control">
+            <div class="segment active">Выполненные</div>
+            <div class="segment">Новые</div>
+            <div class="segment">Отклоненные</div>
+          </div>
+
+          <!-- Cards Grid -->
+          <div class="cards-grid">
+            <!-- Card 1 - Blue -->
+            <div class="card blue">
+              <div class="date-badge">2 дня</div>
+              <h3 class="card-title">Убрать одну точку</h3>
+              <div class="card-image">
+                <img src="../img/tasks_page/hand.png" alt="Bottle" />
+              </div>
+              <button class="eco-points-button">20 эко-баллов</button>
+            </div>
+
+            <!-- Card 2 - Yellow -->
+            <div class="card yellow">
+              <div class="date-badge">1 месяц</div>
+              <h3 class="card-title">Убрать восемь точек</h3>
+              <div class="card-image">
+                <img src="../img/tasks_page/hands.png" alt="Trash" />
+              </div>
+              <button class="eco-points-button">65 эко-баллов</button>
+            </div>
+
+            <!-- Card 3 - Yellow -->
+            <div class="card yellow">
+              <div class="date-badge">1 день</div>
+              <h3 class="card-title">Купить один товар в магазине</h3>
+              <div class="card-image">
+                <img src="../img/tasks_page/tshort.png" alt="T-shirt" />
+              </div>
+              <button class="eco-points-button">15 эко-баллов</button>
+            </div>
+
+            <!-- Card 4 - Green -->
+            <div class="card green">
+              <div class="date-badge">8 часов</div>
+              <h3 class="card-title">Купить один товар в магазине</h3>
+              <div class="card-image">
+                <img src="../img/tasks_page/bag.png" alt="Shopping bag" />
+              </div>
+              <button class="eco-points-button">65 эко-баллов</button>
+            </div>
+          </div>
         </div>
       </section>
     </main>
