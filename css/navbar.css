@@ -70,10 +70,10 @@
     content: url(../img/nav_icons/main-icon.svg);
   }
   .icon-lightbulb::before {
-    content: url(../img/nav_icons/learn-icon-1.svg);
+    content: url(../img/nav_icons/learn-icon.svg);
   }
   .icon-info::before {
-    content: url(../img/nav_icons/learn-icon.svg);
+    content: url(../img/nav_icons/learn-icon-1.svg);
   }
   .icon-user::before {
     content: url(../img/nav_icons/profile-icon.svg);
