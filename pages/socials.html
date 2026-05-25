@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ШРИФТЫ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- БУТСТРАП -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- СТИЛИ -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/socials.css" />
+    <title>Уберу | Задания</title>
+  </head>
+  <body>
+    <main class="main">
+      <section>
+        <div class="container">
+          <!-- Header -->
+          <div class="header">
+            <a href="../index.html" class="back-button-link">
+              <div class="back-button">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                </svg>
+              </div>
+            </a>
+            <h1 class="page-title">Сообщество</h1>
+          </div>
+
+          <!-- Segmented Control -->
+          <div class="segmented-control">
+            <div class="segment-background"></div>
+            <div class="segment active" data-index="0">Все</div>
+            <div class="segment" data-index="1">Новости</div>
+            <div class="segment" data-index="2">Люди</div>
+          </div>
+
+          <div class="cards-container">
+            <!-- Card 1 - Blue -->
+            <div class="card card-blue" data-category="users">
+              <div class="card-header">
+                <img
+                  src="../img/socials_page/panteleimon.jpg"
+                  alt="Пантелеймон Константинопольский"
+                  class="avatar"
+                />
+                <div class="user-name">Пантелеймон Константинопольский</div>
+              </div>
+              <p class="achievement-text">
+                Убрал 8 мест за неделю, что больше 84% пользователей по городу
+                <span class="dotted-underline">Санкт-Петербург</span>!
+              </p>
+              <div class="photo-grid">
+                <div class="photo-item large">
+                  <img
+                    src="../img/socials_page/photos 1.png"
+                    alt="До и после уборки"
+                  />
+                </div>
+                <div class="photo-item large">
+                  <img
+                    src="../img/socials_page/photos 1.png"
+                    alt="До и после уборки"
+                  />
+                </div>
+                <div class="photo-item">
+                  <img
+                    src="../img/socials_page/photos 2.png"
+                    alt="Уборка территории"
+                  />
+                </div>
+                <div class="photo-item">
+                  <img
+                    src="../img/socials_page/photos 3.png"
+                    alt="Чистая зона"
+                  />
+                </div>
+                <div class="photo-item">
+                  <img src="../img/socials_page/photos 1.png" alt="Результат" />
+                </div>
+              </div>
+              <div class="likes">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+                32
+              </div>
+            </div>
+
+            <!-- Card 2 - Red/Orange -->
+            <div class="card card-red" data-category="news">
+              <div class="news-image">
+                <img src="../img/socials_page/news.png" alt="Костер в бочке" />
+              </div>
+              <p class="achievement-text">
+                В Росприроднадзоре подписали закон, запрещающий закапывать мусор
+                и сжигать его вблизи населенных пунктов.
+              </p>
+              <div class="likes">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+                72
+              </div>
+            </div>
+
+            <!-- Card 3 - Green -->
+            <div class="card card-green" data-category="users">
+              <div class="card-header">
+                <img
+                  src="../img/socials_page/miroslava.jpg"
+                  alt="Мирослава Спасская"
+                  class="avatar"
+                />
+                <div class="user-name">Мирослава Спасская</div>
+              </div>
+              <p class="achievement-text">
+                Убрала 6 мест за неделю, что больше 64% пользователей по городу
+                <span class="dotted-underline">Санкт-Петербург</span>!
+              </p>
+              <div class="photo-grid">
+                <div class="photo-item large">
+                  <img
+                    src="../img/socials_page/photos 1.png"
+                    alt="До и после уборки"
+                  />
+                </div>
+                <div class="photo-item large">
+                  <img
+                    src="../img/socials_page/photos 1.png"
+                    alt="До и после уборки"
+                  />
+                </div>
+                <div class="photo-item">
+                  <img
+                    src="../img/socials_page/photos 2.png"
+                    alt="Уборка территории"
+                  />
+                </div>
+                <div class="photo-item">
+                  <img
+                    src="../img/socials_page/photos 3.png"
+                    alt="Чистая зона"
+                  />
+                </div>
+                <div class="photo-item">
+                  <img src="../img/socials_page/photos 1.png" alt="Результат" />
+                </div>
+              </div>
+              <div class="likes">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+                24
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const segments = document.querySelectorAll(".segment");
+        const background = document.querySelector(".segment-background");
+        const cards = document.querySelectorAll(".card");
+
+        // Функция для обновления позиций и видимости
+        function updateView(activeIndex) {
+          // Перемещаем зеленую подложку
+          background.style.transform = `translateX(${activeIndex * 100}%)`;
+
+          // Обновляем активный класс на сегментах
+          segments.forEach((segment, index) => {
+            if (index === activeIndex) {
+              segment.classList.add("active");
+            } else {
+              segment.classList.remove("active");
+            }
+          });
+
+          // Показываем/скрываем карточки по категории
+          const categories = ["all", "news", "users"];
+          const activeCategory = categories[activeIndex];
+
+          cards.forEach((card) => {
+            if (activeCategory === "all") {
+              card.style.display = "flex";
+            } else if (card.dataset.category === activeCategory) {
+              card.style.display = "flex";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        }
+
+        // Обработчик клика на сегмент
+        segments.forEach((segment, index) => {
+          segment.addEventListener("click", () => {
+            updateView(index);
+          });
+        });
+
+        // Инициализация - показываем только "Выполненные"
+        updateView(0);
+      });
+    </script>
+  </body>
+</html>

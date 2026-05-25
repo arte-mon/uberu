@@ -1,0 +1,234 @@
+/* Header */
+.header {
+  margin-top: 8vh;
+  margin-bottom: 24px;
+}
+
+.back-button {
+  width: 44px;
+  height: 44px;
+  background-color: var(--app-dark);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.back-button svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--app-white);
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--app-dark);
+}
+
+/* Segmented Control */
+.segmented-control {
+  display: flex;
+  background-color: var(--app-dark-gray);
+  border-radius: 32px;
+  padding: 4px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.segment {
+  flex: 1;
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 28px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color: var(--app-white);
+  position: relative;
+  z-index: 1;
+}
+
+.segment-background {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: calc(100% - 8px);
+  width: calc(100% / 3 - 2.667px);
+  background-color: var(--app-green);
+  border-radius: 28px;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+/* Cards */
+
+.cards-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  border-radius: 20px;
+  padding: 20px;
+  color: var(--app-white);
+  overflow: hidden;
+}
+
+.card-blue {
+  background-color: var(--app-blue);
+}
+
+.card-red {
+  background-color: var(--app-red);
+}
+
+.card-green {
+  background-color: var(--app-green);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.achievement-text {
+  font-size: 12px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.dotted-underline {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.photo-item {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.photo-item.large {
+  grid-column: span 1;
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.news-image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.news-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.heart-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  body {
+    padding: 32px;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .user-name {
+    font-size: 16px;
+  }
+
+  .achievement-text {
+    font-size: 14px;
+  }
+
+  .photo-grid {
+    gap: 12px;
+  }
+
+  .likes {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .heart-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
