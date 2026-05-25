@@ -106,9 +106,11 @@
 }
 
 .card-image {
-  width: calc(100% + 40px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 140px;
-  margin: 16px -20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,7 +152,6 @@
   }
 
   .card-image {
-    width: calc(100% + 32px);
-    margin: 16px -16px;
+    height: 120px;
   }
 }
