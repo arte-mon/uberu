@@ -50,10 +50,14 @@
     <div id="popupCardRed" class="popup-card hidden">
       <button class="popup-close" id="popupCloseRed">&times;</button>
       <div class="popup-content">
-        <h3 class="popup-title">Точка #<span id="pointNumberRed">0212</span></h3>
-        <p class="popup-status">Статус: <span class="status-text status-red">загрязнено</span></p>
+        <h3 class="popup-title">
+          Точка #<span id="pointNumberRed">0212</span>
+        </h3>
+        <p class="popup-status">
+          Статус: <span class="status-text status-red">загрязнено</span>
+        </p>
         <div class="popup-image">
-          <img src="../img/photo-1.jpg" alt="Загрязненное место" />
+          <img src="../img/mapclear/trash.png" alt="Загрязненное место" />
         </div>
         <button class="popup-btn" id="cleanBtnRed">Уберу</button>
       </div>
@@ -63,16 +67,22 @@
     <div id="popupCardYellow" class="popup-card hidden">
       <button class="popup-close" id="popupCloseYellow">&times;</button>
       <div class="popup-content">
-        <h3 class="popup-title">Точка #<span id="pointNumberYellow">0345</span></h3>
-        <p class="popup-status">Статус: <span class="status-text status-yellow">на проверке</span></p>
-        <p class="popup-description">Подтвердите, что точка действительно убрана</p>
+        <h3 class="popup-title">
+          Точка #<span id="pointNumberYellow">0345</span>
+        </h3>
+        <p class="popup-status">
+          Статус: <span class="status-text status-yellow">на проверке</span>
+        </p>
+        <p class="popup-description">
+          Подтвердите, что точка действительно убрана
+        </p>
         <div class="photo-comparison">
           <div class="photo-item">
-            <img src="../img/photo-1.jpg" alt="До уборки" />
+            <img src="../img/mapclear/trash.png" alt="До уборки" />
             <span class="photo-label">До уборки</span>
           </div>
           <div class="photo-item">
-            <img src="../img/photo-2.jpg" alt="После уборки" />
+            <img src="../img/mapclear/clear.png" alt="После уборки" />
             <span class="photo-label">После уборки</span>
           </div>
         </div>
@@ -85,15 +95,25 @@
       <button class="popup-close" id="reportClose">&times;</button>
       <div class="popup-content">
         <h3 class="popup-title">Фотоотчет об уборке</h3>
-        <p class="popup-description">Сделайте фото чистого места и загрузите его</p>
+        <p class="popup-description">
+          Сделайте фото чистого места и загрузите его
+        </p>
         <div class="upload-area">
           <label for="photoUpload" class="upload-label">
             <div class="upload-icon">📷</div>
             <span>Нажмите, чтобы сделать фото</span>
           </label>
-          <input type="file" id="photoUpload" accept="image/*" capture="camera" hidden />
+          <input
+            type="file"
+            id="photoUpload"
+            accept="image/*"
+            capture="camera"
+            hidden
+          />
         </div>
-        <button class="popup-btn submit-btn" id="submitReport">Отправить отчет</button>
+        <button class="popup-btn submit-btn" id="submitReport">
+          Отправить отчет
+        </button>
       </div>
     </div>
 
