@@ -1,3 +1,1 @@
-(css/map-page.css, js/map.js, pages/map.html) are all source code files, and there are no build artifacts, dependencies, or temporary files in the changes.
-
-No .gitignore rules are needed.
+Nothing should be ignored based on the provided file changes, as they only include source files (.css, .js, .html) without any build artifacts, dependencies, or temporary files.

@@ -42,6 +42,40 @@
         </div>
       </section>
     </main>
+
+    <!-- Overlay for popups -->
+    <div id="popupOverlay" class="popup-overlay hidden"></div>
+
+    <!-- Поп-ап карточка для красной метки -->
+    <div id="popupCard" class="popup-card hidden">
+      <button class="popup-close" id="popupClose">&times;</button>
+      <div class="popup-content">
+        <h3 class="popup-title">Точка #<span id="pointNumber">0212</span></h3>
+        <p class="popup-status">Статус: <span class="status-text">загрязнено</span></p>
+        <div class="popup-image">
+          <img src="../img/photo-1.jpg" alt="Загрязненное место" />
+        </div>
+        <button class="popup-btn" id="cleanBtn">Уберу</button>
+      </div>
+    </div>
+
+    <!-- Поп-ап карточка для фотоотчета -->
+    <div id="reportCard" class="popup-card hidden">
+      <button class="popup-close" id="reportClose">&times;</button>
+      <div class="popup-content">
+        <h3 class="popup-title">Фотоотчет об уборке</h3>
+        <p class="popup-description">Сделайте фото чистого места и загрузите его</p>
+        <div class="upload-area">
+          <label for="photoUpload" class="upload-label">
+            <div class="upload-icon">📷</div>
+            <span>Нажмите, чтобы сделать фото</span>
+          </label>
+          <input type="file" id="photoUpload" accept="image/*" capture="camera" hidden />
+        </div>
+        <button class="popup-btn submit-btn" id="submitReport">Отправить отчет</button>
+      </div>
+    </div>
+
     <!-- Мобильная навигация -->
     <nav class="mobile-nav">
       <a href="#" class="nav-item icon-trash" aria-label="Удалить"></a>
