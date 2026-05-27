@@ -47,33 +47,55 @@ document.addEventListener('DOMContentLoaded', function() {
     attribution: ''
   }).addTo(fullMap);
   
-  // Элементы поп-апов
-  const popupCard = document.getElementById('popupCard');
+  // Элементы поп-апов для красных меток
+  const popupCardRed = document.getElementById('popupCardRed');
+  const popupCloseRed = document.getElementById('popupCloseRed');
+  const cleanBtnRed = document.getElementById('cleanBtnRed');
+  const pointNumberRedSpan = document.getElementById('pointNumberRed');
+  
+  // Элементы поп-апов для желтых меток
+  const popupCardYellow = document.getElementById('popupCardYellow');
+  const popupCloseYellow = document.getElementById('popupCloseYellow');
+  const cleanBtnYellow = document.getElementById('cleanBtnYellow');
+  const pointNumberYellowSpan = document.getElementById('pointNumberYellow');
+  
+  // Элементы поп-апа фотоотчета
   const reportCard = document.getElementById('reportCard');
   const popupOverlay = document.getElementById('popupOverlay');
-  const popupClose = document.getElementById('popupClose');
   const reportClose = document.getElementById('reportClose');
-  const cleanBtn = document.getElementById('cleanBtn');
   const submitReport = document.getElementById('submitReport');
-  const pointNumberSpan = document.getElementById('pointNumber');
   const photoUpload = document.getElementById('photoUpload');
   
-  // Функция открытия поп-апа карточки
-  function openPopupCard(pointId) {
-    pointNumberSpan.textContent = pointId;
-    popupCard.classList.remove('hidden');
+  // Функция открытия поп-апа карточки для красной метки
+  function openPopupCardRed(pointId) {
+    pointNumberRedSpan.textContent = pointId;
+    popupCardRed.classList.remove('hidden');
     popupOverlay.classList.remove('hidden');
   }
   
-  // Функция закрытия поп-апа карточки
-  function closePopupCard() {
-    popupCard.classList.add('hidden');
+  // Функция закрытия поп-апа карточки для красной метки
+  function closePopupCardRed() {
+    popupCardRed.classList.add('hidden');
+    popupOverlay.classList.add('hidden');
+  }
+  
+  // Функция открытия поп-апа карточки для желтой метки
+  function openPopupCardYellow(pointId) {
+    pointNumberYellowSpan.textContent = pointId;
+    popupCardYellow.classList.remove('hidden');
+    popupOverlay.classList.remove('hidden');
+  }
+  
+  // Функция закрытия поп-апа карточки для желтой метки
+  function closePopupCardYellow() {
+    popupCardYellow.classList.add('hidden');
     popupOverlay.classList.add('hidden');
   }
   
   // Функция открытия поп-апа фотоотчета
   function openReportCard() {
-    popupCard.classList.add('hidden');
+    popupCardRed.classList.add('hidden');
+    popupCardYellow.classList.add('hidden');
     reportCard.classList.remove('hidden');
   }
   
@@ -85,16 +107,22 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Функция закрытия всех поп-апов
   function closeAllPopups() {
-    closePopupCard();
+    closePopupCardRed();
+    closePopupCardYellow();
     closeReportCard();
   }
   
-  // Обработчики событий для поп-апов
-  popupClose.addEventListener('click', closePopupCard);
+  // Обработчики событий для поп-апов красных меток
+  popupCloseRed.addEventListener('click', closePopupCardRed);
+  cleanBtnRed.addEventListener('click', openReportCard);
+  
+  // Обработчики событий для поп-апов желтых меток
+  popupCloseYellow.addEventListener('click', closePopupCardYellow);
+  cleanBtnYellow.addEventListener('click', openReportCard);
+  
+  // Обработчики событий для поп-апа фотоотчета
   reportClose.addEventListener('click', closeReportCard);
   popupOverlay.addEventListener('click', closeAllPopups);
-  
-  cleanBtn.addEventListener('click', openReportCard);
   
   submitReport.addEventListener('click', function() {
     if (photoUpload.files && photoUpload.files[0]) {
@@ -111,13 +139,19 @@ document.addEventListener('DOMContentLoaded', function() {
       icon: createColoredMarker(point.color)
     });
     
-    // Добавляем обработчик клика только для красных меток
+    // Добавляем обработчик клика для красных меток
     if (point.color === 'red') {
       marker.on('click', function() {
-        openPopupCard(point.id);
+        openPopupCardRed(point.id);
+      });
+    } 
+    // Добавляем обработчик клика для желтых меток
+    else if (point.color === 'yellow') {
+      marker.on('click', function() {
+        openPopupCardYellow(point.id);
       });
     } else {
-      // Для желтых и зеленых меток просто показываем название
+      // Для зеленых меток просто показываем название
       marker.bindPopup(point.name);
     }
     

@@ -47,15 +47,26 @@
     <div id="popupOverlay" class="popup-overlay hidden"></div>
 
     <!-- Поп-ап карточка для красной метки -->
-    <div id="popupCard" class="popup-card hidden">
-      <button class="popup-close" id="popupClose">&times;</button>
+    <div id="popupCardRed" class="popup-card hidden">
+      <button class="popup-close" id="popupCloseRed">&times;</button>
       <div class="popup-content">
-        <h3 class="popup-title">Точка #<span id="pointNumber">0212</span></h3>
-        <p class="popup-status">Статус: <span class="status-text">загрязнено</span></p>
+        <h3 class="popup-title">Точка #<span id="pointNumberRed">0212</span></h3>
+        <p class="popup-status">Статус: <span class="status-text status-red">загрязнено</span></p>
         <div class="popup-image">
           <img src="../img/photo-1.jpg" alt="Загрязненное место" />
         </div>
-        <button class="popup-btn" id="cleanBtn">Уберу</button>
+        <button class="popup-btn" id="cleanBtnRed">Уберу</button>
+      </div>
+    </div>
+
+    <!-- Поп-ап карточка для желтой метки -->
+    <div id="popupCardYellow" class="popup-card hidden">
+      <button class="popup-close" id="popupCloseYellow">&times;</button>
+      <div class="popup-content">
+        <h3 class="popup-title">Точка #<span id="pointNumberYellow">0345</span></h3>
+        <p class="popup-status">Статус: <span class="status-text status-yellow">на проверке</span></p>
+        <p class="popup-description">Подтвердите, что точка действительно убрана</p>
+        <button class="popup-btn" id="cleanBtnYellow">Убрано</button>
       </div>
     </div>
 
