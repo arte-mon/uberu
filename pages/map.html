@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ШРИФТЫ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- БУТСТРАП -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- LEAFLET MAP CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <!-- СТИЛИ -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/map-page.css" />
+
+    <title>Уберу | Карта</title>
+  </head>
+  <body class="no-scroll">
+    <!-- MAIN -->
+    <main class="main">
+      <section>
+        <div class="container-fluid p-0">
+          <!-- FULL SCREEN MAP -->
+          <div id="fullMap"></div>
+        </div>
+      </section>
+    </main>
+    <!-- Мобильная навигация -->
+    <nav class="mobile-nav">
+      <a href="#" class="nav-item icon-trash" aria-label="Удалить"></a>
+      <a
+        href="learn.html"
+        class="nav-item icon-lightbulb"
+        aria-label="Идеи"
+      ></a>
+
+      <!-- Центральная кнопка -->
+      <a href="map.html" class="center-btn active" aria-label="Карта">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"
+          />
+        </svg>
+      </a>
+
+      <a
+        href="socials.html"
+        class="nav-item icon-info"
+        aria-label="Информация"
+      ></a>
+      <a href="#" class="nav-item icon-user" aria-label="Профиль"></a>
+    </nav>
+  </body>
+
+  <!-- LEAFLET MAP JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+  ></script>
+  <script src="../js/map.js"></script>
+</html>
