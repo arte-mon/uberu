@@ -131,6 +131,14 @@ body.no-scroll .main {
   font-weight: 600;
 }
 
+.status-text.status-red {
+  color: #ff4444;
+}
+
+.status-text.status-yellow {
+  color: #ffcc00;
+}
+
 .popup-image {
   margin-bottom: 20px;
   border-radius: 12px;
