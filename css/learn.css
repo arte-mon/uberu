@@ -47,10 +47,13 @@
        TOP CARDS — «Полезные советы»
        ═════════════════════════════════════ */
 .top-cards {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
   gap: 12px;
   margin-bottom: 32px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
 }
 
 .top-card {
@@ -65,6 +68,9 @@
   transition: transform 0.2s ease;
   min-height: 200px;
   justify-content: space-between;
+  flex: 0 0 auto;
+  width: 260px;
+  scroll-snap-align: start;
 }
 
 .top-card:hover {
@@ -208,13 +214,19 @@
   }
 
   .top-cards {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding-bottom: 0;
   }
 
   .top-card {
     min-height: 220px;
     padding: 24px 16px 20px;
+    width: auto;
+    scroll-snap-align: normal;
   }
 
   .top-card__image-wrapper {
