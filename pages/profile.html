@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ШРИФТЫ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- БУТСТРАП -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- СТИЛИ -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/profile.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <title>Уберу | Профиль</title>
+  </head>
+  <body>
+    <main class="main">
+      <section>
+        <div class="container">
+          <!-- Header -->
+          <div class="header">
+            <a href="../index.html" class="back-button-link">
+              <div class="back-button">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                </svg>
+              </div>
+            </a>
+            <h1 class="page-title">Профиль</h1>
+          </div>
+
+          <!-- Profile Card -->
+          <div class="profile-card">
+            <div class="profile-header">
+              <img
+                src="../img/socials_page/panteleimon.jpg"
+                alt="Аватар пользователя"
+                class="profile-avatar"
+              />
+              <div class="profile-info">
+                <h2 class="profile-name">Пантелеймон Константинопольский</h2>
+                <p class="profile-level">Уровень 12 • Эко-герой</p>
+              </div>
+            </div>
+
+            <!-- Experience Bar -->
+            <div class="experience-section">
+              <div class="experience-header">
+                <span class="experience-label">Опыт до следующего уровня</span>
+                <span class="experience-value">750 / 1000 XP</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%"></div>
+              </div>
+            </div>
+
+            <!-- Points -->
+            <div class="points-display">
+              <div class="points-item">
+                <span class="points-value">12 538</span>
+                <span class="points-label">очков</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats Grid -->
+          <h3 class="section-subtitle">Статистика</h3>
+          <div class="stats-grid">
+            <div class="stat-card stat-blue">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19.38 2H4.62C3.17 2 2 3.17 2 4.62v14.76c0 1.45 1.17 2.62 2.62 2.62h14.76c1.45 0 2.62-1.17 2.62-2.62V4.62C22 3.17 20.83 2 19.38 2zM20 19.38c0 .34-.28.62-.62.62H4.62c-.34 0-.62-.28-.62-.62V4.62c0-.34.28-.62.62-.62h14.76c.34 0 .62.28.62.62v14.76z"
+                  />
+                  <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" />
+                </svg>
+              </div>
+              <div class="stat-content">
+                <span class="stat-value">11.8</span>
+                <span class="stat-label">кг переработано</span>
+              </div>
+            </div>
+
+            <div class="stat-card stat-green">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                  />
+                </svg>
+              </div>
+              <div class="stat-content">
+                <span class="stat-value">47</span>
+                <span class="stat-label">убрано мест</span>
+              </div>
+            </div>
+
+            <div class="stat-card stat-yellow">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"
+                  />
+                </svg>
+              </div>
+              <div class="stat-content">
+                <span class="stat-value">1 487</span>
+                <span class="stat-label">г CO₂ предотвращено</span>
+              </div>
+            </div>
+
+            <div class="stat-card stat-red">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
+                </svg>
+              </div>
+              <div class="stat-content">
+                <span class="stat-value">23</span>
+                <span class="stat-label">лайков получено</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievements -->
+          <h3 class="section-subtitle">Достижения</h3>
+          <div class="achievements-grid">
+            <div class="achievement-card achieved">
+              <div class="achievement-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                  />
+                </svg>
+              </div>
+              <div class="achievement-info">
+                <h4 class="achievement-title">Первый шаг</h4>
+                <p class="achievement-desc">Убрать первое место</p>
+              </div>
+            </div>
+
+            <div class="achievement-card achieved">
+              <div class="achievement-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                  />
+                </svg>
+              </div>
+              <div class="achievement-info">
+                <h4 class="achievement-title">Эко-активист</h4>
+                <p class="achievement-desc">Убрать 10 мест</p>
+              </div>
+            </div>
+
+            <div class="achievement-card achieved">
+              <div class="achievement-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                  />
+                </svg>
+              </div>
+              <div class="achievement-info">
+                <h4 class="achievement-title">Защитник природы</h4>
+                <p class="achievement-desc">Убрать 50 мест</p>
+              </div>
+            </div>
+
+            <div class="achievement-card locked">
+              <div class="achievement-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+                  />
+                </svg>
+              </div>
+              <div class="achievement-info">
+                <h4 class="achievement-title">Легенда экологии</h4>
+                <p class="achievement-desc">Убрать 100 мест</p>
+              </div>
+            </div>
+
+            <div class="achievement-card locked">
+              <div class="achievement-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+                  />
+                </svg>
+              </div>
+              <div class="achievement-info">
+                <h4 class="achievement-title">Мастер сортировки</h4>
+                <p class="achievement-desc">Сдать все виды отходов</p>
+              </div>
+            </div>
+
+            <div class="achievement-card locked">
+              <div class="achievement-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+                  />
+                </svg>
+              </div>
+              <div class="achievement-info">
+                <h4 class="achievement-title">Волонтер года</h4>
+                <p class="achievement-desc">Принять участие в 10 акциях</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Мобильная навигация -->
+    <nav class="mobile-nav">
+      <a
+        href="../index.html"
+        class="nav-item icon-trash"
+        aria-label="Главная"
+      ></a>
+      <a
+        href="./learn.html"
+        class="nav-item icon-lightbulb"
+        aria-label="Идеи"
+      ></a>
+
+      <!-- Центральная кнопка -->
+      <a href="map.html" class="center-btn" aria-label="Карта">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"
+          />
+        </svg>
+      </a>
+
+      <a href="socials.html" class="nav-item icon-info" aria-label="Сообщество"></a>
+      <a href="#" class="nav-item icon-user active" aria-label="Профиль"></a>
+    </nav>
+  </body>
+</html>
