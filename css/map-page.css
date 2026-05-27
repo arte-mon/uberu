@@ -1,0 +1,65 @@
+/* MAP PAGE - FULL SCREEN MAP WITHOUT SCROLLING */
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+body.no-scroll .main {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#fullMap {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* Custom marker colors */
+.custom-marker-red {
+  background-color: #ff4444;
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.custom-marker-yellow {
+  background-color: #ffcc00;
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.custom-marker-green {
+  background-color: #0ba452;
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Hide Leaflet attribution and controls for cleaner look */
+.leaflet-control-attribution,
+.leaflet-bottom,
+.leaflet-left,
+.leaflet-right,
+.leaflet-top {
+  display: none !important;
+}
+
+/* Mobile nav on top of map */
+.mobile-nav {
+  z-index: 1000;
+}
